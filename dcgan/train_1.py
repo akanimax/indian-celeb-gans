@@ -47,15 +47,15 @@ def parse_arguments():
                         help="saved state file for discriminator optimizer")
 
     parser.add_argument("--images_dir", action="store", type=str,
-                        default="../data/indian-celebs",
+                        default="../data/indian-celebs/cleaned_data",
                         help="path for the images directory")
 
     parser.add_argument("--sample_dir", action="store", type=str,
-                        default="samples/3",
+                        default="samples/4",
                         help="path for the generated samples directory")
 
     parser.add_argument("--model_dir", action="store", type=str,
-                        default="models/3",
+                        default="models/4",
                         help="path for saved models directory")
 
     parser.add_argument("--loss_function", action="store", type=str,
@@ -80,11 +80,11 @@ def parse_arguments():
                         help="starting epoch number")
 
     parser.add_argument("--num_epochs", action="store", type=int,
-                        default=210,
+                        default=300,
                         help="number of epochs for training")
 
     parser.add_argument("--feedback_factor", action="store", type=int,
-                        default=5,
+                        default=1,
                         help="number of logs to generate per epoch")
 
     parser.add_argument("--checkpoint_factor", action="store", type=int,

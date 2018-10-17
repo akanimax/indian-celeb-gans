@@ -58,6 +58,10 @@ class FlatDirectoryImageDataset(Dataset):
         if self.transform is not None:
             img = self.transform(img)
 
+        if img.shape[0] == 4:
+            # ignore the alpha channel:
+            img = img[:3, :, :]
+
         # return the image:
         return img
 
@@ -120,6 +124,7 @@ class FoldersDistributedDataset(Dataset):
         if self.transform is not None:
             img = self.transform(img)
 
+        # ignore the alpha channel if the image has one
         if img.shape[0] == 4:
             # ignore the alpha channel:
             img = img[:3, :, :]

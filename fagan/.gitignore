@@ -8,7 +8,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-env/
 build/
 develop-eggs/
 dist/
@@ -24,6 +23,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -43,8 +43,9 @@ htmlcov/
 .cache
 nosetests.xml
 coverage.xml
-*,cover
+*.cover
 .hypothesis/
+.pytest_cache/
 
 # Translations
 *.mo
@@ -53,6 +54,7 @@ coverage.xml
 # Django stuff:
 *.log
 local_settings.py
+db.sqlite3
 
 # Flask stuff:
 instance/
@@ -79,13 +81,14 @@ celerybeat-schedule
 # SageMath parsed files
 *.sage.py
 
-# dotenv
+# Environments
 .env
-
-# virtualenv
 .venv
+env/
 venv/
 ENV/
+env.bak/
+venv.bak/
 
 # Spyder project settings
 .spyderproject
@@ -103,14 +106,6 @@ ENV/
 # ignore the pycharm setup
 .idea/
 
-# ignore the generated samples for now
-samples/
-
-# also ignore the saved models. The training can be reproduced by refering to the paper
+# ignore the models and samples directories
 models/
-
-# ignore some of the non_required folders:
-generated_samples_sngan/
-new_generated_samples_sngan/
-SN\ Gan\ selected\ pics/
-
+samples/
